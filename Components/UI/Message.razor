@@ -1,0 +1,25 @@
+﻿<div class="alert  border border-dark @CssClass">
+    <h4>@Title</h4>
+    <div>@DisplayMessage</div>
+</div>
+
+@code {
+    /// <summary>
+    /// The message to display.in the message box
+    /// </summary>
+    [Parameter, EditorRequired]
+    public string DisplayMessage { get; set; } = string.Empty;
+
+    /// <summary>
+    /// This is the optional title to display
+    /// </summary>
+    [Parameter]
+    public string Title { get; set; } = string.Empty;
+
+    /// <summary>
+    /// The Css class to apply to the message box.
+    /// Defaults to Bootstrap alert
+    /// </summary>
+    [Parameter]
+    public string CssClass { get; set; } = "alert-success";
+}
