@@ -19,11 +19,11 @@
 
 @code {
     // Bound Values
-    private string inputString = "Reverse Me";
+    private string inputString = string.Empty;// = "Reverse Me";
 
     // Parameter Values
-    private string title = "Result";
-    private string color = "alert-danger";
+    private string title = string.Empty;// "Result";
+    private string color = string.Empty;// "alert-danger";
 
     // Local Variables
     private string reversedMessage = string.Empty;
@@ -32,6 +32,8 @@
 
     private void ReverseTheString()
     {
+        isPalindrome = false; // Reset the palindrome check
+
         if(inputString != "") {
             reversedMessage = new string(inputString.Reverse().ToArray());
             displayMessage = $"The reverse of {inputString} is {reversedMessage}";
@@ -48,6 +50,11 @@
         {
             title = "Palindrome";
             color = "alert-success";
+        }
+        else
+        {
+            title = "Not a Palindrome";
+            color = "alert-danger";
         }
     }
 
